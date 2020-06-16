@@ -15,7 +15,10 @@ class CaniController extends Controller
     }
 
     public function show_cani($id){
+      $cani = Cane::all();
 
-      return view("stampa_cane", compact("id"));
+      $cane = $cani -> where("id", $id);
+      $cane = $cane[$id - 1];
+      return view("stampa_cane", compact("cane", "id"));
     }
 }
