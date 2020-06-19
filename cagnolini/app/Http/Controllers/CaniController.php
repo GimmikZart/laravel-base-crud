@@ -15,10 +15,13 @@ class CaniController extends Controller
     }
 
     public function show_cani($id){
-      $cani = Cane::all();
+      //$cani = Cane::all();
+      //$cane = $cani -> where("id", $id) -> first();
 
-      $cane = $cani -> where("id", $id);
-      $cane = $cane[$id - 1];
+      $cane = Cane::findOrFail($id);
+
+      dd($cane);
+
       return view("stampa_cane", compact("cane", "id"));
     }
 }
