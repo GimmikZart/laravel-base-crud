@@ -16,6 +16,7 @@
         phonenumber: {{$omino["phonenumber"]}} <br>
         role: {{$omino["role"]}} <br>
         <a href="{{route("edit", $omino['id'])}}">EDITA IL PROFILO</a>
+        <a href="{{route("destroy", $omino['id'])}}">CANCELLA IL PROFILO</a>
       </section>
     </div>
   </div>
